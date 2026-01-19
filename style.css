@@ -90,13 +90,29 @@ a:hover {
 
 /* Lists */
 ul {
-    list-style: none;
     padding-left: 0;
 }
 
 li {
     margin: 12px 0;
     line-height: 1.7;
+}
+
+/* Bullets ONLY for direct children under h3 */
+h3 + ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+/* NO bullets for nested lists (like Abstract) */
+h3 + ul ul {
+    list-style: none;
+    padding-left: 40px;
+    margin-top: 8px;
+}
+
+h3 + ul ul li::before {
+    content: "";
 }
 
 /* Bullets for main research papers only */
